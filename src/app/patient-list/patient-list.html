@@ -1,1 +1,6 @@
-<p>patient-list works!</p>
+
+<ul>
+    @for (patient of patientList; track patient.id) {
+        <li (click)="patients.selectPatient(patient)">{{ patient.name }}</li>
+    }
+</ul>
