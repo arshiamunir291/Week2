@@ -13,3 +13,4 @@ patients=inject(PatientService)
 patientList=computed(()=>this.patients.patients())
 
 }
+                               
