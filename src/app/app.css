@@ -1,3 +1,23 @@
+
+#app-header{
+    width: 100%;
+    text-align: center;
+}
+#app-header{
+  font-weight: bold;
+}
+#patient-info{
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 2%;
+  background-color: rgba(255, 235, 205, 0.432);
+}
+
 #app-div{
     width: 100%;
     display: grid;
@@ -6,4 +26,27 @@
 }
 .comp-div{
   width: 100%;
+}
+
+@media(max-width:480px){
+  #app-header{
+    font-size:20px ;
+  }
+  #patient-info{
+    width: 90%;
+  }
+}
+@media(min-width:481px)and (max-width:767px){
+  #app-header p{
+    font-size: 24px;
+  }
+    #patient-info{
+    width: 80%;
+  }
+}
+@media(min-width:767px){
+  #app-header p{
+    font-size: 30px;
+  }
+  
 }

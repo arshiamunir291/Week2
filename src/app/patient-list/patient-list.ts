@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { PatientService } from '../patient-service';
 import { PatientType } from '../service.module';
 
@@ -10,11 +10,6 @@ import { PatientType } from '../service.module';
 })
 export class PatientList {
 patients=inject(PatientService)
-patientList:PatientType[]=[];
-ngOnInit(){
-  this.patients.patients$.subscribe(list=>{
-    this.patientList=list;
-  });
-}
+patientList=computed(()=>this.patients.patients())
 
 }
