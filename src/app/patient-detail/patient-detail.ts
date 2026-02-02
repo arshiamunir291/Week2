@@ -1,5 +1,4 @@
-import { Component,inject, signal } from '@angular/core';
-import { PatientType } from '../service.module';
+import { Component,computed,inject, signal } from '@angular/core';
 import { PatientService } from '../patient-service';
 import { CommonModule } from '@angular/common';
 
@@ -15,4 +14,5 @@ export class PatientDetail {
 
   patients=inject(PatientService);//new way from angular 16
   currentPatient=this.patients.selectedPatient;
+  hasPatient=computed(()=>!!this.currentPatient());
 }

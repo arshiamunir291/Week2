@@ -1,5 +1,4 @@
 import { Injectable, signal } from '@angular/core';
-import { BehaviorSubject,Observable } from 'rxjs';
 import { PatientType } from './service.module';
 
 
@@ -16,8 +15,8 @@ export class PatientService {
     {id:'p6',name:'Arman',age:21,gender:'Male', disease:'Heart'},
     {id:'p7',name:'Alyan',age:30,gender:'Male',disease:'Lungs'},
   ]);
-  private _selectedPatient=signal<PatientType | null> (null);
   patients=this._patients.asReadonly();
+  private _selectedPatient=signal<PatientType | null> (null);
   selectedPatient=this._selectedPatient.asReadonly();
 
   clearSelection():void{

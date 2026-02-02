@@ -1,5 +1,5 @@
 <div id="patient-detail">
-    @if (currentPatient()) {
+    @if (hasPatient()) {
         <p>Name:{{ currentPatient()!.name}}</p>
         <p>Age:{{ currentPatient()!.age}}</p>
         <p>Disease:{{ currentPatient()!.disease}}</p>
