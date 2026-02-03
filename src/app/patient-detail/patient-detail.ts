@@ -15,4 +15,9 @@ export class PatientDetail {
   patients=inject(PatientService);//new way from angular 16
   currentPatient=this.patients.selectedPatient;
   hasPatient=computed(()=>!!this.currentPatient());
+  deleteCurrentPatient(){
+    const patient =this.currentPatient();
+    if(!patient) return;
+    this.patients.deletePatient(patient.id)
+  }
 }
