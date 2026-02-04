@@ -1,36 +1,65 @@
-#patient-list{
+#patient-list {
     list-style: none;
-    
-}
-#patient-list li{
-    font-size: 20px;
-    margin-bottom: 4%;
-   font-weight: bold;
 
 }
+
+#patient-list li {
+    font-size: 20px;
+    margin-bottom: 4%;
+    font-weight: bold;
+
+}
+
 #patient-list li p {
-     border: 2px solid black;
-     padding: 2%;
-     width: 50%;
-     border-radius: 5px;
-     background-color: blanchedalmond;
-     transition: 
+    border: 2px solid black;
+    padding: 2%;
+    width: 50%;
+    border-radius: 5px;
+    background-color: blanchedalmond;
+    transition:
         background-color 0.25s ease,
         transform 0.15s ease,
         box-shadow 0.15s ease;
 }
+
 #patient-list li p:hover {
     background-color: #ffe4b5;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* click */
 #patient-list li p:active {
     transform: scale(0.97);
 }
-@media(max-width:480px){
-    #patient-list li p{
+
+@media(max-width:480px) {
+    #patient-list li p {
         font-size: 16px;
-        width: 100%;
+        width: 80%;
+    }
+
+    #patient-list {
+        padding-left: 0%;
+    }
+}
+
+@media(min-width:480px) and (max-width:767px) {
+    #patient-list {
+        padding-left: 0%;
+    }
+
+    #patient-list li p {
+        font-size: 16px;
+        width: 80%;
+    }
+}
+
+@media(min-width: 767px)and (max-width: 991px) {
+    #patient-list {
+        padding-left: 0%;
+    }
+
+    #patient-list li p {
+        width: 80%;
     }
 }

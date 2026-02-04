@@ -1,15 +1,12 @@
 <div id="patient-detail">
     @if (hasPatient()) {
-        <p>Name:{{ currentPatient()?.name}}</p>
-        <p>Age:{{ currentPatient()?.age}}</p>
-        <p>Disease:{{ currentPatient()?.disease}}</p>
+    <p>Name:{{ currentPatient()?.name}}</p>
+    <p>Age:{{ currentPatient()?.age}}</p>
+    <p>Disease:{{ currentPatient()?.disease}}</p>
     }
     @else {
-        <p>No patient selected yet!</p>
+    <p>No patient selected yet!</p>
     }
     <button (click)="patients.clearSelection()">Clear</button>
     <button (click)="deleteCurrentPatient()">Delete</button>
 </div>
-
-
-

@@ -1,67 +1,77 @@
-import { Component,effect, inject } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PatientService } from '../patient-service';
 
 @Component({
   selector: 'app-patient-form',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './patient-form.html',
   styleUrl: './patient-form.css',
 })
 export class PatientForm {
-private patientService=inject(PatientService);
+  private patientService = inject(PatientService);
 
-name:string='';
-age!:number;
-disease:string='';
-gender:string='';
-isEdit=false;
-editingId!:number;
-constructor(){
-  effect(()=>{
-    const patient=this.patientService.selectedPatient();
-    if(patient){
-      this.isEdit=true;
-      this.editingId=patient.id;
-      this.name=patient.name;
-      this.age=patient.age;
-      this.gender=patient.gender;
-      this.disease=patient.disease;
-    }
-  });
-}
-save(){
-  if(this.isEdit){
-    this.patientService.updatePatient({
-      id:this.editingId,
-      name:this.name,
-      age:this.age,
-      gender:this.gender,
-      disease:this.disease
+  name = signal<string>('');
+  age = signal<number | null>(null);
+  disease = signal<string>('');
+  gender = signal<string>('');
+  isEdit = signal<boolean>(false);
+  editingId = signal<number | null>(null);
+
+  constructor() {
+    effect(() => {
+      const patient = this.patientService.selectedPatient();
+      if (patient) {
+        this.name.set(patient.name);
+        this.age.set(patient.age);
+        this.disease.set(patient.disease);
+        this.gender.set(patient.gender);
+        this.isEdit.set(true);
+        this.editingId.set(patient.id);
+      }
     });
   }
-  else{
-      this.patientService.addPatient({
-        name: this.name,
-        age: this.age,
-        gender: this.gender,
-        disease: this.disease,
-      })
+  isValid = computed(() => {
+    return (
+      this.name().trim() &&
+      this.age() !== null &&
+      this.gender().trim() &&
+      this.disease().trim()
+    )
+  })
+
+  save() {
+    if (!this.isValid()) return;
+    const loadPatient = {
+      name: this.name(),
+      age: this.age()!,
+      gender: this.gender(),
+      disease: this.disease(),
     }
-  this.resetForm();
-}
-cancel(){
-  this.patientService.clearSelection();
-  this.resetForm();
-}
-private resetForm(){
-  this.name='';
-  this.age=0;
-  this.gender='';
-  this.disease='';
-  this.isEdit=false;
-}
+    if (this.isEdit()) {
+      this.patientService.updatePatient({
+        id: this.editingId()!,
+        ...loadPatient
+      })
+    } else {
+      this.patientService.addPatient(loadPatient);
+    }
+    this.resetForm();
+  }
+
+  private resetForm() {
+    this.name.set('');
+    this.age.set(0);
+    this.gender.set('');
+    this.disease.set('');
+    this.isEdit.set(false);
+  }
+
+  cancel() {
+    this.patientService.clearSelection();
+    this.resetForm();
+  };
 }
 
 

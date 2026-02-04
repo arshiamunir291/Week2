@@ -1,12 +1,13 @@
-
-#app-header{
-    width: 100%;
-    text-align: center;
+#app-header {
+  width: 100%;
+  text-align: center;
 }
-#app-header{
+
+#app-header {
   font-weight: bold;
 }
-#patient-info{
+
+#patient-info {
   display: flex;
   width: 50%;
   justify-content: center;
@@ -18,35 +19,42 @@
   background-color: rgba(255, 235, 205, 0.432);
 }
 
-#app-div{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 50% 50%;
-   
+#app-div {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+
 }
-.comp-div{
+
+.comp-div {
   width: 100%;
 }
 
-@media(max-width:480px){
-  #app-header{
-    font-size:20px ;
+@media(max-width:480px) {
+  #app-header {
+    font-size: 20px;
   }
-  #patient-info{
+
+  #patient-info {
     width: 90%;
   }
+
+
 }
-@media(min-width:481px)and (max-width:767px){
-  #app-header p{
+
+@media(min-width:481px)and (max-width:767px) {
+  #app-header p {
     font-size: 24px;
   }
-    #patient-info{
+
+  #patient-info {
     width: 80%;
   }
 }
-@media(min-width:767px){
-  #app-header p{
+
+@media(min-width:767px) {
+  #app-header p {
     font-size: 30px;
   }
-  
+
 }

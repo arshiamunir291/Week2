@@ -1,17 +1,21 @@
-<p>{{isEdit ? 'Update Patient':'Add Patient'}}</p>
+<p>{{isEdit() ? 'Update Patient':'Add Patient'}}</p>
 <form (ngSubmit)="save()">
-    <input type="text" placeholder="Enter name" [(ngModel)]="name" name="name" required >
+    <input type="text" placeholder="Enter name" [value]="name()" (input)="name.set($any($event.target).value)"
+        name="name" required>
 
-    <input type="text" placeholder="Enter age" [(ngModel)]="age" name="age" required >
+    <input type="text" placeholder="Enter age" [value]="age()" (input)="age.set($any($event.target).valueAsNumber)"
+        name="age" required>
 
-    <input type="text" placeholder="Enter gender" [(ngModel)]="gender" name="gender" required >
+    <input type="text" placeholder="Enter gender" [value]="gender()" (input)="gender.set($any($event.target).value)"
+        name="gender" required>
 
-    <input type="text" placeholder="Enter disease" [(ngModel)]="disease" name="disease" required ><br>
+    <input type="text" placeholder="Enter disease" [value]="disease()" (input)="disease.set($any($event.target).value)"
+        name="disease" required><br>
 
-    <button type="submit" [disabled]="!name || !age || !gender || !disease" >{{ isEdit? 'Update': 'Add'}}</button>
+    <button type="submit" [disabled]="!isValid()">{{ isEdit()? 'Update': 'Add'}}</button>
 
-    @if (isEdit) {
-        <button type="button" (click)="cancel()">Cancel</button>
+    @if (isEdit()) {
+    <button type="button" (click)="cancel()">Cancel</button>
     }
-   
+
 </form>

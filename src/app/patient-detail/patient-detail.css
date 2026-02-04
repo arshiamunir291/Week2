@@ -1,12 +1,14 @@
-#patient-detail{
+#patient-detail {
     margin-left: 10%;
 }
-#patient-detail p{
+
+#patient-detail p {
     font-size: 20px;
     font-weight: bold;
 
 }
-#patient-detail button{
+
+#patient-detail button {
     font-size: 20px;
     font-weight: bold;
     padding: 2%;
@@ -15,14 +17,15 @@
     border-radius: 5px;
     background-color: blanchedalmond;
     border: 2px solid black;
-    transition: 
+    transition:
         background-color 0.25s ease,
         transform 0.15s ease,
         box-shadow 0.15s ease;
 }
+
 #patient-detail button:hover {
     background-color: #ffe4b5;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* click */
@@ -30,11 +33,32 @@
     transform: scale(0.97);
 }
 
-@media(max-width:480px){
-    #patient-detail p{
+@media(max-width:480px) {
+    #patient-detail p {
         font-size: 16px;
     }
+
+    #patient-detail button {
+        font-size: 14px;
+        width: 47%;
+        margin-right: 1%;
+        
+    }
+}
+@media(min-width:480px) and (max-width:767px){
     #patient-detail button{
         font-size: 16px;
+        margin-right: 4%;
+        width: 40%;
     }
+        #patient-detail p {
+        font-size: 16px;
+    }
+}
+@media(min-width: 767px)and (max-width: 991px){
+       #patient-detail button{
+        width:45%;
+        margin-right: 4%;
+    }
+
 }

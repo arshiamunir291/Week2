@@ -1,6 +1,7 @@
-
 <ul id="patient-list">
     @for (patient of patientList(); track patient.id) {
-        <li (click)="patients.selectPatient(patient)"><p>{{ patient.name }}</p></li>
+    <li (click)="patients.selectPatient(patient)">
+        <p>{{ patient.name }}</p>
+    </li>
     }
 </ul>

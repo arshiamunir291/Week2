@@ -8,8 +8,7 @@ import { PatientService } from '../patient-service';
   styleUrl: './patient-list.css',
 })
 export class PatientList {
-patients=inject(PatientService)
-patientList=this.patients.patients;
+  patients = inject(PatientService)
+  patientList = this.patients.patients;
 
 }
-                               

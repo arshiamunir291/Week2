@@ -1,11 +1,13 @@
-*{
+* {
     margin-left: 10%;
 }
-p{
+
+p {
     font-size: 20px;
     font-weight: bold;
 }
-form input{
+
+form input {
     width: 70%;
     margin-left: 0px;
     background-color: blanchedalmond;
@@ -15,17 +17,19 @@ form input{
     box-shadow: none;
     border: 2px solid black;
 }
-form input:active{
+
+form input:focus {
     background-color: #ffe4b5;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    transition: 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition:
         background-color 0.25s ease,
         transform 0.15s ease,
         box-shadow 0.15s ease;
 }
-button{
+
+button {
     margin-left: 0;
-     font-size: 20px;
+    font-size: 20px;
     font-weight: bold;
     padding: 2%;
     width: 35%;
@@ -34,12 +38,49 @@ button{
     border-radius: 5px;
     background-color: blanchedalmond;
     border: 2px solid black;
-    transition: 
+    transition:
         background-color 0.25s ease,
         transform 0.15s ease,
         box-shadow 0.15s ease;
 }
+
 button:hover {
     background-color: #ffe4b5;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media(max-width:480px) {
+    button{
+        font-size: 14px;
+        margin-right: 1%;
+        width: 47%;
+    }
+    form input{
+        width: 80%;
+    }
+    p{
+        font-size: 16px;
+    }
+}
+@media(min-width:480px) and (max-width:767px){
+    button{
+        font-size: 16px;
+        margin-right: 4%;
+        width: 40%;
+    }
+    form input{
+        width: 80%;
+    }
+    p {
+        font-size: 16px;
+    }
+}
+@media(min-width: 767px)and (max-width: 991px){
+    button{
+        width:45%;
+        margin-right: 4%;
+    }
+    form input{
+        width: 80%;
+    }
 }

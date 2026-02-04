@@ -4,7 +4,7 @@ import { PatientList } from './patient-list/patient-list';
 import { PatientForm } from './patient-form/patient-form';
 @Component({
   selector: 'app-root',
-  imports: [PatientDetail,PatientList,PatientForm],
+  imports: [PatientDetail, PatientList, PatientForm],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
