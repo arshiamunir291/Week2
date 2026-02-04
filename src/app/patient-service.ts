@@ -53,6 +53,7 @@ export class PatientService {
 
   deletePatient(id: number): void {
     this._patients.update(list => list.filter(p => p.id !== id));
+    this._selectedPatient.set(null);
     this.savePatients();
   }
 
