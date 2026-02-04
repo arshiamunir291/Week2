@@ -3,8 +3,8 @@
     <input type="text" placeholder="Enter name" [value]="name()" (input)="name.set($any($event.target).value)"
         name="name" required>
 
-    <input type="text" placeholder="Enter age" [value]="age()" (input)="age.set($any($event.target).valueAsNumber)"
-        name="age" required>
+    <input type="number" placeholder="Enter age" [value]="age()?? '' " (input)="setAge($event.target.value)" name="age"
+        required>
 
     <input type="text" placeholder="Enter gender" [value]="gender()" (input)="gender.set($any($event.target).value)"
         name="gender" required>

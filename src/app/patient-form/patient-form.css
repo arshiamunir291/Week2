@@ -50,37 +50,44 @@ button:hover {
 }
 
 @media(max-width:480px) {
-    button{
+    button {
         font-size: 14px;
         margin-right: 1%;
         width: 47%;
     }
-    form input{
+
+    form input {
         width: 80%;
     }
-    p{
-        font-size: 16px;
-    }
-}
-@media(min-width:480px) and (max-width:767px){
-    button{
-        font-size: 16px;
-        margin-right: 4%;
-        width: 40%;
-    }
-    form input{
-        width: 80%;
-    }
+
     p {
         font-size: 16px;
     }
 }
-@media(min-width: 767px)and (max-width: 991px){
-    button{
-        width:45%;
+
+@media(min-width:480px) and (max-width:767px) {
+    button {
+        font-size: 16px;
+        margin-right: 4%;
+        width: 40%;
+    }
+
+    form input {
+        width: 80%;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+@media(min-width: 767px)and (max-width: 991px) {
+    button {
+        width: 45%;
         margin-right: 4%;
     }
-    form input{
+
+    form input {
         width: 80%;
     }
 }

@@ -50,10 +50,10 @@ export class PatientForm {
       disease: this.disease(),
     }
     if (this.isEdit()) {
-      this.patientService.updatePatient({
-        id: this.editingId()!,
-        ...loadPatient
-      })
+      const updated = { id: this.editingId()!, ...loadPatient };
+      this.patientService.updatePatient(updated);
+      this.patientService.selectPatient(updated);
+
     } else {
       this.patientService.addPatient(loadPatient);
     }
@@ -72,6 +72,9 @@ export class PatientForm {
     this.patientService.clearSelection();
     this.resetForm();
   };
+  setAge(value: string) {
+    this.age.set(value ? Number(value) : 0);
+  }
 }
 
 

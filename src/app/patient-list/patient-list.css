@@ -13,7 +13,7 @@
 #patient-list li p {
     border: 2px solid black;
     padding: 2%;
-    width: 50%;
+    width: 80%;
     border-radius: 5px;
     background-color: blanchedalmond;
     transition:
@@ -35,7 +35,6 @@
 @media(max-width:480px) {
     #patient-list li p {
         font-size: 16px;
-        width: 80%;
     }
 
     #patient-list {
@@ -50,16 +49,11 @@
 
     #patient-list li p {
         font-size: 16px;
-        width: 80%;
     }
 }
 
 @media(min-width: 767px)and (max-width: 991px) {
     #patient-list {
         padding-left: 0%;
-    }
-
-    #patient-list li p {
-        width: 80%;
     }
 }
