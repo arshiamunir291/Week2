@@ -1,6 +1,10 @@
-import { Component, computed, inject, signal } from '@angular/core';
-import { PatientService } from '../patient-service';
+import { Component, inject, } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { Observable, map } from 'rxjs';
+import { Patient } from '../patient.module';
+import { selectSelectedPatient } from '../state/patient.selectors';
+import { deletePatient, selectPatient } from '../state/patient.actions';
 
 @Component({
   selector: 'app-patient-detail',
@@ -9,15 +13,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './patient-detail.css',
 })
 export class PatientDetail {
-  // Older way through dependency injection
-  // constructor(private patientService:PatientService){}
+  private store = inject(Store);
 
-  patients = inject(PatientService);//new way from angular 16
-  currentPatient = this.patients.selectedPatient;
-  hasPatient = computed(() => !!this.currentPatient());
-  deleteCurrentPatient() {
-    const patient = this.currentPatient();
+
+  currentPatient$: Observable<Patient | null> = this.store.select(selectSelectedPatient);
+  clearSelection(){
+    this.store.dispatch(selectPatient({patient:null}));
+  }
+  hasPatient$: Observable<boolean> = this.currentPatient$.pipe(map(patient => !!patient));
+  deleteCurrentPatient(patient: Patient | null) {
     if (!patient) return;
-    this.patients.deletePatient(patient.id)
+    this.store.dispatch(deletePatient({ id: patient.id }));
   }
 }

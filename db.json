@@ -1,0 +1,104 @@
+{
+  "patients": [
+    {
+      "id": "1",
+      "first_name": "Floria",
+      "last_name": "Norwell",
+      "age": 30,
+      "gender": "Male",
+      "email": "fnorwell0@mapy.cz",
+      "country": "China",
+      "disease": "Stroke"
+    },
+    {
+      "id": "2",
+      "first_name": "Aurie",
+      "last_name": "Plampin",
+      "age": 51,
+      "gender": "Female",
+      "email": "aplampin1@vinaora.com",
+      "country": "Pakistan",
+      "disease": "Hypertension"
+    },
+    {
+      "id": "3",
+      "first_name": "Maison",
+      "last_name": "Rubenfeld",
+      "age": 28,
+      "gender": "Male",
+      "email": "mrubenfeld2@hostgator.com",
+      "country": "China",
+      "disease": "Alzheimer's"
+    },
+    {
+      "id": "4",
+      "first_name": "Olivero",
+      "last_name": "Gascoyne",
+      "age": 64,
+      "gender": "Male",
+      "email": "ogascoyne3@google.cn",
+      "country": "China",
+      "disease": "Alzheimer's"
+    },
+    {
+      "id": "5",
+      "first_name": "Tiff",
+      "last_name": "Dyos",
+      "age": 35,
+      "gender": "Female",
+      "email": "tdyos4@twitpic.com",
+      "country": "China",
+      "disease": "COVID-19"
+    },
+    {
+      "id": "6",
+      "first_name": "Cherry",
+      "last_name": "Antic",
+      "age": 53,
+      "gender": "Female",
+      "email": "cantic5@stumbleupon.com",
+      "country": "China",
+      "disease": "Diabetes"
+    },
+    {
+      "id": "7",
+      "first_name": "Jackelyn",
+      "last_name": "Jacomb",
+      "age": 21,
+      "gender": "Female",
+      "email": "jjacomb6@people.com.cn",
+      "country": "China",
+      "disease": "Depression"
+    },
+    {
+      "id": "8",
+      "first_name": "Marcellus",
+      "last_name": "Dewdeny",
+      "age": 67,
+      "gender": "Bigender",
+      "email": "mdewdeny7@bbb.org",
+      "country": "China",
+      "disease": "Alzheimer's"
+    },
+    {
+      "id": "9",
+      "first_name": "Michaelina",
+      "last_name": "Armal",
+      "age": 48,
+      "gender": "Female",
+      "email": "marmal8@flavors.me",
+      "country": "China",
+      "disease": "Depression"
+    },
+    {
+      "id": "10",
+      "first_name": "Mufi",
+      "last_name": "Solleme",
+      "age": 80,
+      "gender": "Female",
+      "email": "msolleme9@cdc.gov",
+      "country": "Canada",
+      "disease": "Arthritis"
+    }
+  ]
+}
