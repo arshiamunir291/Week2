@@ -1,12 +1,12 @@
 <div id="patient-detail">
     @if (currentPatient$|async; as patient) {
-    <p>First Name:{{ patient?.first_name}}</p>
-    <p>Last Name:{{ patient?.last_name}}</p>
-    <p>Age:{{ patient?.age}}</p>
-    <p>Gender:{{ patient?.gender}}</p>
-    <p>Email:{{ patient?.email}}</p>
-    <p>Country:{{ patient?.country}}</p>
-    <p>Disease:{{ patient?.disease}}</p>
+    <p><b>First Name:</b>{{ patient?.first_name}}</p>
+    <p><b>Last Name:</b>{{ patient?.last_name}}</p>
+    <p><b>Age:</b>{{ patient?.age}}</p>
+    <p><b>Gender:</b>{{ patient?.gender}}</p>
+    <p><b>Email:</b>{{ patient?.email}}</p>
+    <p><b>Country:</b>{{ patient?.country}}</p>
+    <p><b>Disease:</b>{{ patient?.disease}}</p>
     <button (click)="deleteCurrentPatient(patient)">Delete</button>
     }
     @else {

@@ -1,5 +1,7 @@
 import { createAction,props } from "@ngrx/store";
 import { Patient } from "../patient.module";
+
+
 export const loadPatients=createAction(
     '[Patient] Load Patients'
 );

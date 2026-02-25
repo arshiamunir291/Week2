@@ -2,8 +2,8 @@ import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Patient } from '../patient.module';
-import { loadPatients, selectPatient } from '../state/patient.actions';
-import { selectAllPatients } from '../state/patient.selectors';
+import { loadPatients, selectPatient } from '../store/patient.actions';
+import { selectAllPatients } from '../store/patient.selectors';
 import { AsyncPipe } from '@angular/common';
 
 

@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { Observable, map } from 'rxjs';
 import { Patient } from '../patient.module';
-import { selectSelectedPatient } from '../state/patient.selectors';
-import { deletePatient, selectPatient } from '../state/patient.actions';
+import { selectSelectedPatient } from '../store/patient.selectors';
+import { deletePatient, selectPatient } from '../store/patient.actions';
 
 @Component({
   selector: 'app-patient-detail',

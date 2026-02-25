@@ -5,8 +5,8 @@ import { provideHttpClient } from '@angular/common/http';
 import { routes } from './app.routes';
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
-import { patientReducer } from './state/patient.reducer';
-import { PatientEffects } from './state/patient.effects';
+import { patientReducer } from './store/patient.reducer';
+import { PatientEffects } from './store/patient.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [

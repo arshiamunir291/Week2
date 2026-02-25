@@ -45,4 +45,4 @@ export const patientReducer=createReducer(
         list:state.list.filter(p=>p.id!==id),
         selected:null
     })),
-)
+)  
