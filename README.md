@@ -6,5 +6,3 @@ It has two sibling components:
 Why not use input/output signal?
 input ans output signals are used for communcation between parent and child component,in this case both component are sibling so there is no need of input/output signal.
 
-Why use service?
-A service is used to share data and communicate between componets without creating direct dependencies. In this application both components have to commuicate so service is the reliable way to communicate and managed shared data.
