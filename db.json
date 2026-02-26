@@ -4,10 +4,10 @@
       "id": "1",
       "first_name": "Floria",
       "last_name": "Norwell",
-      "age": 30,
-      "gender": "Male",
+      "age": 32,
+      "gender": "Female",
       "email": "fnorwell0@mapy.cz",
-      "country": "China",
+      "country": "Canda",
       "disease": "Stroke"
     },
     {
@@ -17,7 +17,7 @@
       "age": 51,
       "gender": "Female",
       "email": "aplampin1@vinaora.com",
-      "country": "Pakistan",
+      "country": "China",
       "disease": "Hypertension"
     },
     {
@@ -61,16 +61,6 @@
       "disease": "Diabetes"
     },
     {
-      "id": "7",
-      "first_name": "Jackelyn",
-      "last_name": "Jacomb",
-      "age": 21,
-      "gender": "Female",
-      "email": "jjacomb6@people.com.cn",
-      "country": "China",
-      "disease": "Depression"
-    },
-    {
       "id": "8",
       "first_name": "Marcellus",
       "last_name": "Dewdeny",
@@ -99,6 +89,16 @@
       "email": "msolleme9@cdc.gov",
       "country": "Canada",
       "disease": "Arthritis"
+    },
+    {
+      "id": "face",
+      "first_name": "Jhon",
+      "last_name": "Ibrahim",
+      "age": 30,
+      "gender": "male",
+      "email": "jhonibrahim@gmail.com",
+      "country": "America",
+      "disease": "Eye Flu"
     }
   ]
 }

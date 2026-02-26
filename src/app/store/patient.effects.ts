@@ -31,7 +31,7 @@ export class PatientEffects {
             ofType(PatientActions.AddPatient),
             mergeMap(action =>
                 this.http.post<Patient>(this.apiUrl, action.patient).pipe(
-                    map((newPatient) => PatientActions.selectPatient({patient:newPatient})),
+                    map((newPatient) => PatientActions.addPatientSuccess({patient:newPatient})),
                     catchError(error =>
                         of(PatientActions.loadPatientsFailure({ error }))
                     )
@@ -42,11 +42,11 @@ export class PatientEffects {
     updatePatient$ = createEffect(() =>
         this.actions$.pipe(
             ofType(PatientActions.updatePatient),
-            mergeMap(action =>
-                this.http.put(
-                    `${this.apiUrl}/${action.patient?.id}`,
-                    action.patient).pipe(
-                        map(() => PatientActions.loadPatients()),
+            mergeMap(({patient}) =>
+                this.http.put<Patient>(
+                    `${this.apiUrl}/${patient.id}`,
+                    patient).pipe(
+                        map((updated) => PatientActions.updatePatientSuccess({patient:updated})),
                         catchError(error => of(PatientActions.loadPatientsFailure({ error })))
                     )
             )
@@ -55,9 +55,9 @@ export class PatientEffects {
     deletePatient$ = createEffect(() =>
         this.actions$.pipe(
             ofType(PatientActions.deletePatient),
-            mergeMap(action =>
-                this.http.delete(`${this.apiUrl}/${action.id}`).pipe(
-                    map(() => PatientActions.loadPatients()),
+            mergeMap(({id}) =>
+                this.http.delete(`${this.apiUrl}/${id}`).pipe(
+                    map(() => PatientActions.deletePatientSuccess({id})),
                     catchError(error =>
                         of(PatientActions.loadPatientsFailure({ error }))
                     )

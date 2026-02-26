@@ -1,15 +1,14 @@
-<p>{{isEdit() ? 'Update Patient':'Add Patient'}}</p>
-<form (ngSubmit)="save()">
-    <input type="text" placeholder="Enter first name" [value]="first_name()" (input)="first_name.set($any($event.target).value)" name="first_name" required>
-    <input type="text" placeholder="Enter last  name" [value]="last_name()" (input)="last_name.set($any($event.target).value)" name="last_name" required>
-    <input type="number" placeholder="Enter age" [value]="age()?? '' " (input)="setAge($event.target.value)" name="age"required>
-    <input type="text" placeholder="Enter gender" [value]="gender()"  (input)="gender.set($any($event.target).value)"name="gender" required>
-    <input type="email" placeholder="Enter email" [value]="email()" (input)="email.set($any($event.target).value)"name="email" required>
-    <input type="text" placeholder="Enter country" [value]="country()" (input)="country.set($any($event.target).value)"name="country" required>
-    <input type="text" placeholder="Enter disease" [value]="disease()" (input)="disease.set($any($event.target).value)"name="disease" required><br>
-    <button type="submit" [disabled]="!isValid()">{{ isEdit()? 'Update': 'Add'}}</button>
-    @if (isEdit()) {
+<p>{{isEdit ? 'Update Patient':'Add Patient'}}</p>
+<form [formGroup]="form" (ngSubmit)="save()">
+    <input type="text" placeholder="Enter first name" formControlName="first_name">
+    <input type="text" placeholder="Enter last  name" formControlName="last_name">
+    <input type="number" placeholder="Enter age" formControlName="age">
+    <input type="text" placeholder="Enter gender" formControlName="gender">
+    <input type="email" placeholder="Enter email" formControlName="email">
+    <input type="text" placeholder="Enter country" formControlName="country">
+    <input type="text" placeholder="Enter disease" formControlName="disease"><br>
+    <button type="submit" [disabled]="form.invalid">{{ isEdit? 'Update': 'Add'}}</button>
+    @if (isEdit) {
     <button type="button" (click)="cancel()">Cancel</button>
     }
-
 </form>

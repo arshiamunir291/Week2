@@ -32,17 +32,18 @@ export const patientReducer=createReducer(
         ...state,
         selected:patient
     })),
-    on(PatientActions.AddPatient,(state,{patient})=>({
+    on(PatientActions.addPatientSuccess,(state,{patient})=>({
         ...state,
         list:[...state.list,patient]
     })),
-    on(PatientActions.updatePatient,(state,{ patient })=>({
+    on(PatientActions.updatePatientSuccess,(state,{ patient })=>({
         ...state,
-        list:state.list.map(p=>p.id===patient?.id? {...p,...patient}:p)
+        list:state.list.map(p=>p.id===patient.id? patient:p),
+        selected:patient
     })),
-    on(PatientActions.deletePatient,(state,{id})=>({
+    on(PatientActions.deletePatientSuccess,(state,{id})=>({
         ...state,
         list:state.list.filter(p=>p.id!==id),
-        selected:null
+        selected:state.selected?.id===id? null:state.selected
     })),
 )  

@@ -19,13 +19,27 @@ export const selectPatient=createAction(
 )
 export const AddPatient=createAction(
     '[Patient] Add Patient',
-    props<{patient:Patient}>()
+    props<{patient:Omit<Patient,'id'>}>()
 )
 export const updatePatient=createAction(
     '[Patient] Update Patient',
-    props<{patient:Patient | null}>()
+    props<{patient:Patient}>()
 )
 export const deletePatient=createAction(
     '[Patient] Delete Patient',
     props<{id:number}>()
 )
+export const addPatientSuccess = createAction(
+  '[Patient] Add Patient Success',
+  props<{ patient: Patient }>()
+);
+
+export const updatePatientSuccess = createAction(
+  '[Patient] Update Patient Success',
+  props<{ patient: Patient }>()
+);
+
+export const deletePatientSuccess = createAction(
+  '[Patient] Delete Patient Success',
+  props<{ id: number }>()
+);
